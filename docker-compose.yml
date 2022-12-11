@@ -1,0 +1,65 @@
+version: "3.8"
+services:
+  client:
+    image: client
+    restart: unless-stopped
+    container_name: client
+    hostname: client
+    build:
+      context: client
+      target: runner
+      dockerfile: Dockerfile
+    environment:
+      GRAPHQL_URI: 'http://server:9000/graphql'
+    ports:
+      - 3000:3000
+
+    networks:
+      - shared-network
+  
+  server:
+    image: server
+    restart: unless-stopped
+    container_name: server
+    hostname: server
+    build: 
+      context: server
+      dockerfile: Dockerfile
+  
+    environment:
+      MONGO_URL: mongodb://mongo:sweetlove@database:27017
+
+    ports:
+      - 9000:9000
+    
+    depends_on:
+      database:
+        condition: service_started
+    
+    networks:
+      - shared-network
+
+  database:
+    image: mongo
+    restart: unless-stopped
+    container_name: database
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: mongo
+      MONGO_INITDB_ROOT_PASSWORD: sweetlove
+
+    ports:
+      - "27017:27017"
+
+    networks:
+      - shared-network
+
+    volumes:
+      - mongo-data:/data/db
+  
+networks:
+  shared-network:
+    driver: bridge
+
+volumes:
+  mongo-data:
+    driver: local

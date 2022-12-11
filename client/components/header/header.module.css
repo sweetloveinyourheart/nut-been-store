@@ -1,0 +1,47 @@
+.header-area {
+    height: 63px;
+}
+
+.header {
+    border-bottom: 1px solid #eee;
+    width: 100%;
+    z-index: 999;
+    background-color: #fff;
+    transition: 0.2s;
+}
+
+.header--fixed {
+    position: fixed;
+}
+
+.header a {
+    color: unset;
+    text-decoration: none;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.cart {
+    position: relative;
+    background: transparent;
+    color: #1e1e1e;
+    border: none;
+}
+
+.cart .cart-counter {
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: 16px;
+    width: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #ffb41f;
+    border-radius: 100%;
+    font-size: 10px;
+}

@@ -1,0 +1,120 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+type Collection {
+  _id: String
+  name: String!
+  description: String!
+  short_link: String!
+  created_at: DateTime!
+}
+
+"""
+A date-time string at UTC, such as 2019-12-03T09:54:33Z, compliant with the date-time format.
+"""
+scalar DateTime
+
+type ProductType {
+  price: Float!
+  weight: String!
+}
+
+type Product {
+  _id: String!
+  name: String!
+  description: String!
+  short_link: String!
+  product_collection: Collection!
+  types: [ProductType!]!
+  images: [String!]!
+  created_at: DateTime!
+}
+
+type Customer {
+  name: String!
+  phone: String!
+  address: String!
+}
+
+type Order {
+  product: Product!
+  customer: Customer!
+  type: ProductType!
+  quantity: Int!
+  status: OrderStatus!
+  created_at: DateTime!
+}
+
+enum OrderStatus {
+  Pending
+  InProgress
+  Finished
+}
+
+type Banner {
+  data_url: String!
+}
+
+type Query {
+  GetPageCollection: [Collection!]!
+  GetCollectionByShortLink(short_link: String!): Collection!
+  GetLatestProduct: [Product!]!
+  GetProductByShortLink(short_link: String!): Product!
+  GetProductByCollection(collection: String!): [Product!]!
+  GetShopOrders(cursor: Float!): [Order!]!
+  GetBanners: [Banner!]!
+}
+
+type Mutation {
+  CreateCollection(data: CreateCollectionInput!): Collection!
+  DeleteCollection(id: String!): Collection!
+  CreateProduct(product: CreateProductInput!): Product!
+  UpdateProduct(id: String!, product: UpdateProductInput!): Product!
+  DeleteProduct(id: String!): Product!
+  CreateOrder(order: CreateOrderInput!): Order!
+  ChangeOrderStatus(id: String!, status: String!): Order!
+  CreateBanner(banner: CreateBannerInput!): Banner!
+  DeleteBanner(id: String!): Banner!
+}
+
+input CreateCollectionInput {
+  name: String!
+  description: String!
+}
+
+input CreateProductInput {
+  name: String!
+  types: [ProductTypeInput!]!
+  images: [String!]!
+  product_collection: String!
+}
+
+input ProductTypeInput {
+  price: Float!
+  weight: String!
+}
+
+input UpdateProductInput {
+  name: String
+  types: [ProductTypeInput!]
+  images: [String!]
+  product_collection: String
+}
+
+input CreateOrderInput {
+  product: String!
+  type: ProductTypeInput!
+  quantity: Int!
+  customer: CustomerInput!
+}
+
+input CustomerInput {
+  name: String!
+  phone: String!
+  address: String!
+}
+
+input CreateBannerInput {
+  data_url: String!
+}

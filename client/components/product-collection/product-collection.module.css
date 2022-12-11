@@ -1,0 +1,21 @@
+.collection {
+	padding-top: 31px;
+	margin-bottom: 92px;
+}
+
+.title {
+    margin-bottom: 48px;
+}
+
+.title h3 {
+    margin-bottom: 16px;
+    font-weight: 700;
+}
+
+.title p {
+    width: 75%;
+    color: #777;
+    line-height: 26px;
+    font-size: 14px;
+    white-space: pre-wrap;
+}

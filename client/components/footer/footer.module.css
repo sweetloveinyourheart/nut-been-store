@@ -1,0 +1,142 @@
+
+.footer-section {
+	background: #262626;
+	padding-bottom: 0;
+    padding-top: 100px;
+}
+
+.newslatter-form {
+	margin-bottom: 90px;
+}
+
+.newslatter-form form {
+	position: relative;
+}
+
+.newslatter-form form input {
+	width: 100%;
+	border: 2px solid #454747;
+	border-radius: 50px;
+	height: 53px;
+	background: transparent;
+	color: #535353;
+	font-size: 14px;
+	font-style: italic;
+	font-weight: 600;
+	padding-left: 30px;
+	position: relative;
+}
+
+.newslatter-form form button {
+	width: 310px;
+	height: 53px;
+	background: #B0BCC2;
+	border: 2px solid #B0BCC2;
+	color: #fff;
+	cursor: pointer;
+	text-transform: uppercase;
+	font-size: 14px;
+	font-weight: 600;
+	border-radius: 50px;
+	position: absolute;
+	right: 0;
+}
+
+.footer-widget {
+	margin-bottom: 40px;
+}
+
+.footer-widget .single-footer-widget {
+	margin-bottom: 30px;
+}
+
+.footer-widget .single-footer-widget h4 {
+	color: #fff;
+	font-size: 26px;
+	margin-bottom: 44px;
+}
+
+.footer-widget .single-footer-widget ul li {
+	color: #fff;
+	font-size: 14px;
+	font-weight: 500;
+	list-style: none;
+	line-height: 36px;
+	opacity: 0.5;
+}
+
+.footer-widget .single-footer-widget ul {
+	padding: 0 !important;
+}
+
+
+.social-links-warp {
+	background: #222121;
+	padding: 46px 0;
+}
+
+.social-links a {
+	margin-right: 88px;
+	display: inline-block;
+}
+
+.social-links a:last-child {
+	margin-right: 0;
+}
+
+.social-links a svg {
+	font-size: 30px;
+	color: #d7d7d7;
+	float: left;
+	margin-right: 19px;
+	overflow: hidden;
+	-webkit-transition: all 0.3s;
+	transition: all 0.3s;
+}
+
+.social-links a span {
+	display: inline-block;
+	font-size: 12px;
+	font-weight: 400;
+	text-transform: uppercase;
+	color: #9f9fa0;
+	padding-top: 10px;
+	-webkit-transition: all 0.3s;
+	transition: all 0.3s;
+}
+
+.social-links a.instagram:hover i {
+	color: #2F5D84;
+}
+
+.social-links a.google-plus:hover i {
+	color: #E04B37;
+}
+
+.social-links a.twitter:hover i {
+	color: #5abed6;
+}
+
+.social-links a.pinterest:hover i {
+	color: #CD212D;
+}
+
+.social-links a.facebook:hover i {
+	color: #39599F;
+}
+
+.social-links a.twitter:hover i {
+	color: #5abed6;
+}
+
+.social-links a.youtube:hover i {
+	color: #D12227;
+}
+
+.social-links a.tumblr:hover i {
+	color: #37475E;
+}
+
+.social-links a:hover span {
+	color: #fff;
+}
